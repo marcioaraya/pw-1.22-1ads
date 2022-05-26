@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="cab1">Javascript</h1>
+
+    <p>Neste exemplo usamos a função prompt() que abre uma janela para obter um nome, 
+        que será armazenado na variável <span style="color: blue;">nome</span>
+        Em seguida usa a função alert() para exibir uma mensagem de saudação
+    </p>
+    <script>
+        // abrirá uma janela para digitar o nome
+        var nome = prompt("Seu nome?");
+        // abrirá uma janela com mensagem de saudação
+        alert('Olá! '+nome);
+        console.log(nome);
+    </script>
+
+    <p>Neste botão, será chamada a função MudaCabecalho() que altera o conteúdo do 
+        cabeçalho pelo nome que foi digitado.
+    </p>
+    <button onclick="MudaCabecalho()">
+        Muda Cabeçalho
+    </button>
+
+    <script>
+        function MudaCabecalho(){
+            document.getElementById('cab1').innerHTML=nome;
+        }
+    </script>
+
+    <button onclick="document.getElementById('cab1').style.color='blue'">
+        Azul
+    </button>
+    <button onclick="document.getElementById('cab1').style.color='green'">
+        Verde
+    </button>
+    <button onclick="document.getElementById('cab1').style.color='black'">
+        Preto
+    </button>
+</body>
+</html>
