@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Formulário</h1>
+
+    <form method="POST">
+        <label for="id_nome">Nome:</label>
+        <br>
+        <input type="text"
+               name="nome"
+               placeholder="Digite seu nome"
+               id="id_nome"
+               required  >
+        <br>
+        <label for="id_sobrenome">Sobrenome:</label>
+        <br>
+        <input type="text"
+               name="sobrenome"
+               placeholder="Digite seu sobrenome"
+               id="id_sobrenome">
+        <br>
+        <label for="id_senha">Senha:</label>
+        <br>
+        <input type="password" name="senha"
+               id="id_senha">
+        <br>
+
+        <input type="radio" 
+               name="curso"
+               value="GTI"
+               id="id_gti"
+        >
+        <label for="id_gti">GTI</label>
+        <br>       
+        <input type="radio" 
+               name="curso"
+               value="ADS"
+               id="id_ads"
+        >
+        <label for="id_ads">ADS</label>
+        <br>           
+        <input type="submit" value="Enviar">
+    </form>
+
+</body>
+</html>
