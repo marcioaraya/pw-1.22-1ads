@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="nota1">Digite a primeira nota:</label>
+        <input type="text" id="nota1" name="nota1" value="0">
+        <br>
+        <label for="nota1">Digite a segunda nota:</label>
+        <input type="text" id="nota2" name="nota2" value="0">
+        
+    </form>
+
+    <button onclick="verificaSituacao()">
+        Verifica Situação
+    </button>
+
+    <p>Média:<span id="med"></span></p>
+    <p>Situação:<span id="sit"></span></p>
+
+
+    <script>
+        function verificaSituacao(){
+            let situacao = '';
+            let cor='';
+            let n1 = 0.0;
+            let n2 = 0.0;
+            let media = 0;
+
+            obterNotas();
+            calcularMedia();
+            exibirMediaSituacao();
+
+
+            function obterNotas(){
+                n1 = parseFloat(document.getElementById('nota1').value);
+                n2 = parseFloat(document.getElementById('nota2').value);
+            }
+
+            function calcularMedia(){
+                media = (n1 + n2)/2;
+            }
+            
+            function exibirMediaSituacao(){
+                if (media >= 6) {
+                    situacao = 'Aprovado';
+                    cor = 'blue';
+                } else {
+                    situacao = 'Reprovado';
+                    cor = 'red';
+                }
+                document.getElementById('med').innerHTML= media;
+                document.getElementById('sit').innerHTML= situacao;
+                document.getElementById('sit').style.color= cor;
+            }
+        }
+    </script>
+
+            
+</body>
+</html>
