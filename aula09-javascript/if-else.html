@@ -1,0 +1,49 @@
+<script>
+    // vamos supor que já temos as variáveis peso e altura
+    let imc = peso / altura * altura;
+    // vamos inicialiar a variável situação
+    let situacao = '';
+
+    if (imc < 20) {
+        situacao = 'Abaixo do peso';
+    } else {
+        if (imc >= 20 && imc < 25) {
+            situacao = 'Normal';
+        } else {
+            if (imc >= 25 && imc < 30) {
+                situacao = 'Sobrepeso';
+            } else {
+                if (imc >= 30 && imc < 35) {
+                    situacao = 'Obesidade I';
+                } else {
+                    if (imc >= 35 && imc < 40) {
+                        situacao = 'Obesidade II';
+                    } else {
+                        situacao = 'Obesidade III';
+                    }
+                }
+            }
+        }
+    }
+
+    // reescrevendo usando "else if"
+    // por exempo se (imc <20 ) for falso implica que o imc será 
+    // com certeza maior ou igual a 20 sempre
+    // por isso não precisa escrever essa condição no if seguinte
+
+    if (imc < 20) {
+        situacao = 'Abaixo do peso';
+    } else if (imc >= 20) {
+        situacao = 'Normal';
+    } else if (imc >= 25) {
+        situacao = 'Sobrepeso';
+    } else if (imc >= 30) {
+        situacao = 'Obesidade I';
+    } else if (imc >= 35) {
+        situacao = 'Obesidade II';
+    } else {
+        situacao = 'Obesidade III';
+    }
+
+
+</script>
