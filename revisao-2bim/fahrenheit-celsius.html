@@ -8,33 +8,56 @@
 </head>
 <body>
     <h1>Conversor temperatura</h1>
-    <h2>Celsius - Fahrenheit</h2>     
-    <label for="celsius">Celsius</label>
-    <input type="text" id="celsius" name="celsius">
+    <h2>Fahrenheit - Celsius</h2>     
+    <label for="fahrenheit">Fahrenheit</label>
+    <input type="text" id="fahrenheit" name="fahrenheit">
         
-    <p>Fórmula: °F = °C × 1,8 + 32  </p>
+    <p>Fórmula: °C = (°F - 32) / 1,8  </p>
 
-    <p>Fahrenheit:
-        <span id="f">            
+    <p>Celsius:
+        <span id="c">            
         </span>
     </p>
 
     <br>
-    <button onclick="calcula()">Converter Celsius -> Fahrenheit</button>
+    <button onclick="calcula()">Converter Fahrenheit -> Celsius</button>
 
     
     <script>
         function calcula(){
-            // ENTRADA: obter o valor em graus Celsius
-            let c = parseFloat(document.getElementById("celsius").value);
+            let situacao="";
+            let cor="black";
 
-            // PROCESSAMENTO: calcular graus fahrenheit de acordo com a fórmula
-            let f = c * 1.8 + 32;
+            // ENTRADA: obter o valor em graus Fahrenheit
+            let f = parseFloat(document.getElementById("fahrenheit").value);
 
-            // SAÍDA: exibe o valor em graus Fahrenheit
-            // localiza a tag <span> com id="f"
-            // altera o innerHTML para conter o valor da variavel f (graus fahrenheit)
-            document.getElementById("f").innerHTML = f;
+            // PROCESSAMENTO: calcular graus Celsius de acordo com a fórmula
+            let c = (f - 32) / 1.8;
+            c = c.toFixed(1);
+
+            if (c >= 41) {
+                situacao = "Hipertermia";
+                cor="red";
+            } else if (c>= 39.6) {
+                situacao = "Febre Alta";
+                cor="orange";
+            } else if (c>= 37.6) {
+                situacao = "Febre";
+                cor="yellow";
+            } else if (c>= 36) {
+                situacao = "Normal";
+                cor="green";
+            } else  {
+                situacao = "Hipotermia";
+                cor="azul";
+            } 
+       
+            // SAÍDA: exibe o valor em graus Celsius
+            // localiza a tag <span> com id="c"
+            // altera o innerHTML para conter o valor da variavel c (graus celsius)
+            document.getElementById("c").innerHTML = c + " " + situacao;
+            document.getElementById("c").style.color = cor;
+
         }
     </script>
 </body>
