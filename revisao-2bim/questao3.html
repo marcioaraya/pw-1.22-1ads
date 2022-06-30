@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        action=indica o programa que irá receber os dados
+               deste formulário
+        method= forma que os dados serão enviados
+              - GET: dados aparecem na barra de endereços do navegador (URL)/ 
+                     tem limite de tamanho (2048 bytes)
+              - POST: dados NÃO aparecem na barra de endereços do navegador/ 
+                      NÃO tem limite de tamanho
+    -->
+    <form action="programa1.php" method="GET">
+        <input type="text" id="id_nome" name="nome"
+               placeholder="Digite seu nome"
+               value="Fulano de Tal">
+               <br>
+        <!-- fieldset cria uma borda ao redor dos elementos
+             dentro dele
+             legend cria a legenda que aparece sobre a borda
+            -->
+        <fieldset>
+            <legend>Curso</legend>
+            <input type="radio" id="GCO" name="curso" value="10">
+            <!-- para conectar um rótulo (label)
+                 com outro elemento no formulário 
+                 usamos o atributo "for" (para)
+                onde deve indicar o "id" do elemento 
+                com o qual deseja conectar
+                -
+                quando o rótulo está conectado ao botão de rádio, 
+                se clicar no rótulo vai marcar o botão de rádio correspondente
+            -->
+
+            <!--
+                para criar um grupo de botões de rádio de modo que apenas
+                um deles fique ativo de cada vez, todos devem ter o mesmo
+                valor para o atributo "name".
+                Não confundir com "id", já que cada elemento deve ter seu
+                próprio valor para id.
+            -->
+            <label for="GCO">Gestão Comercial</label>
+            <br>
+            <input type="radio" id="MKT" name="curso" value="20">
+            <label for="MKT">Marketing</label>
+            <br>
+            <input type="radio" id="SI" name="curso" value="30" >
+            <label for="SI">Segurança da Informação</label>
+            <br>
+            <input type="radio" id="CD" name="curso" value="40"  checked>
+            <label for="CD" >Ciência de Dados</label>
+            <br>
+        </fieldset>
+
+        <label for="semestre">Semestre</label>
+        <select id="semestre" name="semestre">
+            <option value="1">Primeiro semestre</option>
+            <option value="2">Segundo semestre</option>
+            <option value="3">Terceiro semestre</option>
+            <option value="4">Quarto semestre</option>
+            <option value="5">Quinto semestre</option>
+        </select>
+
+        <!-- textarea cria uma caixa de texto com mais de uma linha
+            rows = quantidade de linhas
+            cols = quantidade de colunas
+        -->
+        <br>
+        <label for="id_sugestoes">Sugestões</label>
+        <textarea name="sugestoes" id="id_sugestoes" cols="40" rows="5"></textarea>
+        <br>
+
+        <!-- serve para o usuário informar que já 
+             terminou de informar os dados e enviar os dados 
+             do formulário para o programa no servidor (indicado pelo action)
+        -->
+        <input type="submit" value="Enviar">
+        <!-- serve para retornar o formulário a situação 
+             que estava quando foi carregado no navegador,
+             isto é, se o formulário estava com os campos vazios, os campos 
+             preenchidos serão apagados.
+             Se o formulário já tinha valores, retornará para os valores originais
+        -->
+        <input type="reset" value="Limpar">
+
+    </form>
+    
+</body>
+</html>

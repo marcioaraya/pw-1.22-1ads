@@ -1,0 +1,22 @@
+<html>
+<body>
+    <h1>Pessoa</h1>
+    <p id="id_nome"></p>
+    <p id="id_sobrenome"></p>
+    <p id="id_idade"></p>
+
+    <!-- inclua o código para que quando o botão for pressionado chame a função carregarDadosPessoa() -->
+    <button>Carregar dados pessoa</button>
+
+    <script>
+        // coloque  o código abaixo em uma função carregarDadosPessoa()
+        var pessoa, x;
+        pessoa = { nome: "João", sobrenome: "de Tal", idade: "25" };
+        x = pessoa.nome;
+        
+        document.getElementById("id_nome").innnerHTML = x;
+        // complete o código para aparecer o sobrenome e a idade
+
+    </script>
+</body>
+</html>
